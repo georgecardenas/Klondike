@@ -1,4 +1,4 @@
-package models;
+package klondike.models;
 
 public class Card {
     
@@ -11,8 +11,9 @@ public class Card {
         this.suit = suit;
     }
     
-    public boolean canStack(Card card){
-        return !this.getColor().equals(card.getColor());
+    public Card(Rank rank, Symbol symbol){
+        this.rank = rank;
+        this.suit = new Suit(symbol);
     }
     
     public void setRank(Rank rank){
@@ -32,6 +33,6 @@ public class Card {
     }
     
     public Color getColor(){
-        return this.suit.getColor();
+        return suit.getColor();
     }
 }

@@ -1,4 +1,4 @@
-package models;
+package klondike.models;
 
 public enum Color {
     RED,
