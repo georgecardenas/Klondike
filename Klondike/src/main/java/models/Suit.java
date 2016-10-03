@@ -1,4 +1,4 @@
-package klondike.utils;
+package models;
 
 public class Suit {
     

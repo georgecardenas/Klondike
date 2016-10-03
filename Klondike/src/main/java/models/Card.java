@@ -1,21 +1,14 @@
 package models;
 
-import klondike.utils.Color;
-import klondike.utils.Rank;
-import klondike.utils.Suit;
-
 public class Card {
     
-    private klondike.utils.Card card;
+    private Rank rank;
     
-    public Card(){
-        card = new klondike.utils.Card();
-    }
+    private Suit suit;
     
     public Card(Rank rank, Suit suit){
-        this();
-        this.setRank(rank);
-        this.setSuit(suit);
+        this.rank = rank;
+        this.suit = suit;
     }
     
     public boolean canStack(Card card){
@@ -23,22 +16,22 @@ public class Card {
     }
     
     public void setRank(Rank rank){
-        card.setRank(rank);
+        this.rank = rank;
     }
     
     public void setSuit(Suit suit){
-        card.setSuit(suit);
+        this.suit = suit;
     }
     
     public Rank getRank(){
-        return card.getRank();
+        return this.rank;
     }
     
     public Suit getSuit(){
-        return card.getSuit();
+        return this.suit;
     }
     
     public Color getColor(){
-        return card.getColor();
+        return this.suit.getColor();
     }
 }
