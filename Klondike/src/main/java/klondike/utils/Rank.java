@@ -1,4 +1,4 @@
-package models;
+package klondike.utils;
 
 public enum Rank {
     A,

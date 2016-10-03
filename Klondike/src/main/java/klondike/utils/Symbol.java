@@ -1,6 +1,6 @@
-package models;
+package klondike.utils;
 
-public enum Suit {
+public enum Symbol {
     CLUBS,
     DIAMONDS,
     HEARTS,

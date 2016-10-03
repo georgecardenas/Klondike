@@ -1,6 +1,11 @@
 package models;
 
+import klondike.utils.Color;
+import klondike.utils.Rank;
+import klondike.utils.Suit;
+
 public class Card {
+    
     private klondike.utils.Card card;
     
     public Card(){
@@ -11,6 +16,10 @@ public class Card {
         this();
         this.setRank(rank);
         this.setSuit(suit);
+    }
+    
+    public boolean canStack(Card card){
+        return !this.getColor().equals(card.getColor());
     }
     
     public void setRank(Rank rank){
@@ -27,5 +36,9 @@ public class Card {
     
     public Suit getSuit(){
         return card.getSuit();
+    }
+    
+    public Color getColor(){
+        return card.getColor();
     }
 }
