@@ -54,4 +54,14 @@ public class CardStack {
     public int getPeekSize(){
         return peekSize;
     }
+    
+    public Stack<Card> peek(){
+        Stack<Card> result = new Stack<Card>();
+        
+        for (int i = 0; i < peekSize; i++){
+            result.push(cards.get(i));
+        }
+        
+        return result;
+    }
 }

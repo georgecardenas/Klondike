@@ -1,14 +1,40 @@
 package klondike.models;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Game {
     
-    private Deck deck;
+    private State state;
     
-    private CardStack waste;
+    private Board board;
     
-    private ArrayList<Foundation> foundations;
+    public Game() {
+        state = State.INITIAL;
+        board = new Board();
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
     
-    private ArrayList<Tableau> tableaus;
+    public Deck getDeck(){
+        return board.getDeck();
+    }
+    
+    public CardStack getWaste(){
+        return board.getWaste();
+    }
+    
+    public List<Foundation> getFoundations(){
+        return board.getFoundations();
+    }
+    
+    public List<Tableau> getTableaus(){
+        return board.getTableaus();
+    }
+        
 }

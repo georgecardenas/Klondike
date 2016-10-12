@@ -3,7 +3,9 @@ package klondike.models;
 import java.util.Stack;
 
 public class Tableau extends CardStack implements ConditionalCardStack{
-
+    
+    public static int MAX_TABLEAUS = 7;
+    
     @Override
     public boolean canPush(Card card) {
         if (cards.peek().getRank().getValue() == card.getRank().getValue() + 1){

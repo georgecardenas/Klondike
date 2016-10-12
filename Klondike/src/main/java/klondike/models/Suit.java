@@ -53,5 +53,8 @@ public class Suit {
         return true;
     }
     
-    
+    @Override
+    public String toString(){
+        return this.symbol.toString();
+    }
 }
