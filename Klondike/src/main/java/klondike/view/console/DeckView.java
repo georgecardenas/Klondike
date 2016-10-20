@@ -1,14 +1,14 @@
 package klondike.view.console;
 
-import klondike.models.Deck;
+import klondike.models.CardStack;
 import klondike.utils.IO;
 
 public class DeckView {
-    private Deck deck;
+    private CardStack deck;
     
     private IO io;
     
-    public DeckView(Deck deck){
+    public DeckView(CardStack deck){
         this.deck = deck;
         
         io = new IO();

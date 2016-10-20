@@ -1,15 +1,15 @@
 package klondike.view.console;
 
 import klondike.models.Card;
-import klondike.models.Tableau;
+import klondike.models.CardStack;
 import klondike.utils.IO;
 
 public class TableauView {
-    private Tableau tableau;
+    private CardStack tableau;
     
     private IO io;
     
-    public TableauView(Tableau tableau){
+    public TableauView(CardStack tableau){
         this.tableau = tableau;
         
         io = new IO();

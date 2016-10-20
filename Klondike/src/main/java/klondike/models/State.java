@@ -1,8 +1,8 @@
 package klondike.models;
 
 public enum State {
-	INITIAL,
-	IN_GAME,
+	RENDERING,
+	WAITING_ACTION,
 	FINAL, 
 	EXIT;
 }

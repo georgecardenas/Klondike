@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
-    private Deck deck;
+    private CardStack deck;
     
     private CardStack waste;
     
-    private List<Foundation> foundations;
+    private List<CardStack> foundations;
     
-    private List<Tableau> tableaus;
+    private List<CardStack> tableaus;
     
     public Board(){
         deck = new Deck();
-        deck.shuffle();
+        ((Deck)deck).shuffle();
         
-        waste = new CardStack();
+        waste = new Waste();
         
         foundations = new ArrayList<>();
         
@@ -32,7 +32,7 @@ public class Board {
         dealCards();
     }
     
-    public Deck getDeck(){
+    public CardStack getDeck(){
         return deck;
     }
     
@@ -40,11 +40,11 @@ public class Board {
         return waste;
     }
     
-    public List<Foundation> getFoundations(){
+    public List<CardStack> getFoundations(){
         return foundations;
     }
     
-    public List<Tableau> getTableaus(){
+    public List<CardStack> getTableaus(){
         return tableaus;
     }
     

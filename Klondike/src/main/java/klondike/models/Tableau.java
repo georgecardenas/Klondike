@@ -2,7 +2,7 @@ package klondike.models;
 
 import java.util.Stack;
 
-public class Tableau extends CardStack implements ConditionalCardStack{
+public class Tableau extends CardStack{
     
     public static int MAX_TABLEAUS = 7;
     

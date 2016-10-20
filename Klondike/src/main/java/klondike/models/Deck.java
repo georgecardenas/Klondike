@@ -1,6 +1,7 @@
 package klondike.models;
 
 import java.util.Collections;
+import java.util.Stack;
 
 public class Deck extends CardStack{
     
@@ -19,5 +20,15 @@ public class Deck extends CardStack{
 
     public void shuffle(){
         Collections.shuffle(cards);
+    }
+
+    @Override
+    public boolean canPush(Card card) {
+        return true;
+    }
+
+    @Override
+    public boolean canPush(Stack<Card> cards) {
+        return true;
     }
 }

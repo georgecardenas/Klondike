@@ -1,24 +1,24 @@
 package klondike.controllers.local;
 
+import klondike.controllers.MenuController;
 import klondike.controllers.OperationControllerVisitor;
-import klondike.controllers.StartController;
 import klondike.models.Game;
 import klondike.models.State;
 
-public class LocalStartController extends LocalOperationController implements
-		StartController {
+public class LocalMenuController extends LocalOperationController implements
+		MenuController {
 
-	LocalStartController(Game game) {
+	LocalMenuController(Game game) {
 		super(game);
-	}
-
-	public void start() {
-		assert this.getState() == State.INITIAL;
-		this.setState(State.IN_GAME);
 	}
 
 	@Override
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
 		operationControllerVisitor.visit(this);
 	}
+
+    @Override
+    public void end() {
+       this.setState(State.RENDERING);
+    }
 }

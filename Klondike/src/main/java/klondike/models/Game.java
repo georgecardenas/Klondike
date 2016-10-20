@@ -9,7 +9,7 @@ public class Game {
     private Board board;
     
     public Game() {
-        state = State.INITIAL;
+        state = State.RENDERING;
         board = new Board();
     }
 
@@ -21,7 +21,7 @@ public class Game {
         this.state = state;
     }
     
-    public Deck getDeck(){
+    public CardStack getDeck(){
         return board.getDeck();
     }
     
@@ -29,11 +29,11 @@ public class Game {
         return board.getWaste();
     }
     
-    public List<Foundation> getFoundations(){
+    public List<CardStack> getFoundations(){
         return board.getFoundations();
     }
     
-    public List<Tableau> getTableaus(){
+    public List<CardStack> getTableaus(){
         return board.getTableaus();
     }
         

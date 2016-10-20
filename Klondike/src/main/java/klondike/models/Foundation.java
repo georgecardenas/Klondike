@@ -2,7 +2,7 @@ package klondike.models;
 
 import java.util.Stack;
 
-public class Foundation extends CardStack implements ConditionalCardStack {
+public class Foundation extends CardStack {
 
     public static int MAX_FOUNDATIONS = 4;
     

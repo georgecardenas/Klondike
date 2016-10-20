@@ -7,24 +7,27 @@ public class LocalLogic implements Logic {
 
 	private Game game;
 	
-	private LocalStartController startController;
+	private LocalGameController gameController;
+	
+	private LocalMenuController menuController;
 
 	public LocalLogic() {
 		game = new Game();
-		startController = new LocalStartController(game);
+		gameController = new LocalGameController(game);
+		menuController = new LocalMenuController(game);
 	}
 
 	public LocalOperationController getOperationController() {
 		switch (game.getState()){
-		case INITIAL:
-			return startController;
-		case IN_GAME:
-			return null;
-		case FINAL:
-			return null;
-		case EXIT:
-		default:
-			return null;
+    		case RENDERING:
+    			return gameController;
+    		case WAITING_ACTION:
+                return menuController;
+    		case FINAL:
+    			return null;
+    		case EXIT:
+    		default:
+    			return null;
 		}
 	}
 }

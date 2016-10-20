@@ -2,7 +2,7 @@ package klondike.models;
 
 import java.util.Stack;
 
-public class CardStack {
+public abstract class CardStack {
     
     protected Stack<Card> cards;
     
@@ -56,6 +56,10 @@ public class CardStack {
     }
     
     public Stack<Card> peek(){
+        return peek(this.peekSize);
+    }
+    
+    public Stack<Card> peek(int peekSize){
         Stack<Card> result = new Stack<Card>();
         
         for (int i = 0; i < peekSize; i++){
@@ -64,4 +68,8 @@ public class CardStack {
         
         return result;
     }
+    
+    public abstract boolean canPush(Card card);
+    
+    public abstract boolean canPush(Stack<Card> cards);
 }

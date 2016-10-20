@@ -1,15 +1,15 @@
 package klondike.view.console;
 
 import klondike.controllers.PresenterController;
-import klondike.controllers.StartController;
+import klondike.controllers.GameController;
+import klondike.models.CardStack;
 import klondike.models.Foundation;
-import klondike.models.Tableau;
 import klondike.utils.IO;
 
 public class BoardView {
     private PresenterController controller;
 
-    BoardView(StartController controller) {
+    BoardView(GameController controller) {
         assert controller != null;
         this.controller = controller;
     }
@@ -19,11 +19,11 @@ public class BoardView {
         io.writeln("===========================");
         new DeckView(controller.getDeck()).write();
         new CardStackView(controller.getWaste()).write("Descarte");
-        for(Foundation foundation : controller.getFoundations()){
-            new CardStackView(foundation).write("Palo " + foundation.getSuit().toString());
+        for(CardStack foundation : controller.getFoundations()){
+            new CardStackView(foundation).write("Palo " + ((Foundation)foundation).getSuit().toString());
         }
         int n = 1;
-        for(Tableau tableau : controller.getTableaus()){
+        for(CardStack tableau : controller.getTableaus()){
             new TableauView(tableau).write("Escalera " + n);
             n++;
         }
