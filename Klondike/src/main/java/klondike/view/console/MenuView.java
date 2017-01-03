@@ -26,14 +26,13 @@ public class MenuView {
         io.writeln("9. Salir");
     }
     
-    public void read(){
-        new LimitedIntDialog("Opción?", MAX_OPTIONS)
+    public int read(){
+        return new LimitedIntDialog("Opción?", MAX_OPTIONS)
         .read();
     }
     
     void interact(MenuController menuController){
         write();
-        read();
-        menuController.end();
+        menuController.performAction(read());
     }
 }

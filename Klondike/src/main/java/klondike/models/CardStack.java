@@ -22,8 +22,6 @@ public abstract class CardStack {
     }
     
     public Stack<Card> pop(int n){
-        assert cards.size() >= n;
-        
         Stack<Card> result = new Stack<Card>();
         
         for (int i = 0; i < n; i++){
@@ -35,7 +33,7 @@ public abstract class CardStack {
     
     public void push(Stack<Card> cards){
         for (Card card : cards){
-            cards.push(card);
+            this.cards.push(card);
         }
     }
     
@@ -62,7 +60,7 @@ public abstract class CardStack {
     public Stack<Card> peek(int peekSize){
         Stack<Card> result = new Stack<Card>();
         
-        for (int i = 0; i < peekSize; i++){
+        for (int i = cards.size() - 1; i > (cards.size() - 1) - peekSize; i--){
             result.push(cards.get(i));
         }
         

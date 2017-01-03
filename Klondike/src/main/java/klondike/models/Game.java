@@ -8,9 +8,11 @@ public class Game {
     
     private Board board;
     
+    public final int DECK_TO_WASTE_SIZE = 3;
+    
     public Game() {
         state = State.RENDERING;
-        board = new Board();
+        board = new Board(DECK_TO_WASTE_SIZE);
     }
 
     public State getState() {
@@ -36,5 +38,4 @@ public class Game {
     public List<CardStack> getTableaus(){
         return board.getTableaus();
     }
-        
 }

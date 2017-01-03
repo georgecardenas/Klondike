@@ -1,5 +1,5 @@
 package klondike.controllers;
 
 public interface MenuController extends OperationController{
-    void end();
+    void performAction(int action);
 }

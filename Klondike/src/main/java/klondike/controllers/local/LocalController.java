@@ -39,4 +39,8 @@ public abstract class LocalController {
     public List<CardStack> getTableaus(){
         return game.getTableaus();
     }
+    
+    public int getDeckToWasteSize(){
+        return game.DECK_TO_WASTE_SIZE;
+    }
 }

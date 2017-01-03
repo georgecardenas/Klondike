@@ -12,11 +12,12 @@ public class Board {
     
     private List<CardStack> tableaus;
     
-    public Board(){
+    public Board(int deckToWasteSize){
         deck = new Deck();
         ((Deck)deck).shuffle();
         
         waste = new Waste();
+        waste.setPeekSize(deckToWasteSize);
         
         foundations = new ArrayList<>();
         
