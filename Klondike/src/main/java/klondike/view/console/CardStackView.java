@@ -1,5 +1,7 @@
 package klondike.view.console;
 
+import java.util.Stack;
+
 import klondike.models.Card;
 import klondike.models.CardStack;
 import klondike.utils.IO;
@@ -20,8 +22,9 @@ public class CardStackView {
         if (cardStack.isEmpty()){
             io.writeln("<vacío>");
         }else{
-            for(Card card : cardStack.peek()){
-                CardView cardview = new CardView(card);
+            Stack<Card> peek = cardStack.peek();
+            for (int i=peek.size()-1; i >= 0; i --){
+                CardView cardview = new CardView(peek.get(i));
                 cardview.write();
             }
             io.writeln();

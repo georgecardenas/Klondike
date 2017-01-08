@@ -1,5 +1,7 @@
 package klondike.view.console;
 
+import java.util.Stack;
+
 import klondike.models.Card;
 import klondike.models.CardStack;
 import klondike.utils.IO;
@@ -28,8 +30,9 @@ public class TableauView {
                 io.write("X,X]");
             }
             else{
-                for(Card card : tableau.peek()){
-                    CardView cardview = new CardView(card);
+                Stack<Card> peek = tableau.peek();
+                for (int i=peek.size()-1; i >= 0; i --){
+                    CardView cardview = new CardView(peek.get(i));
                     cardview.write();
                 }
             }

@@ -27,6 +27,7 @@ MoveDeckToWasteController{
                 nCards = getDeckToWasteSize();
             }
             this.getWaste().push(this.getDeck().pop(nCards));
+            this.getWaste().setPeekSize(3);
         }
     }
 

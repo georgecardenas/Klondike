@@ -19,7 +19,9 @@ MoveDeckToWasteController{
     @Override
     public void performAction() {
         if (this.getDeck().isEmpty()){
-            this.getDeck().push(this.getWaste().pop(getWaste().size()));
+            while (!this.getWaste().isEmpty()){
+                this.getDeck().push(this.getWaste().pop()); 
+            }
         }
     }
 

@@ -18,7 +18,10 @@ public class Tableau extends CardStack{
 
     @Override
     public boolean canPush(Stack<Card> cards) {
-        if (this.cards.peek().getRank().getValue() == cards.peek().getRank().getValue() + 1){
+        if (this.isEmpty() && cards.peek().getRank() == Rank.K){
+            return true;
+        }
+        if (!this.isEmpty() && this.cards.peek().getRank().getValue() == cards.peek().getRank().getValue() + 1){
             if (!this.cards.peek().getColor().equals(cards.peek().getColor())){
                 return true;
             }

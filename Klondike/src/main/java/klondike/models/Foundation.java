@@ -19,7 +19,10 @@ public class Foundation extends CardStack {
     
     @Override
     public boolean canPush(Card card) {
-        if (cards.peek().getRank().getValue() == card.getRank().getValue() - 1){
+        if (cards.isEmpty() && card.getRank() == Rank.A && card.getSuit().equals(suit)){
+            return true;
+        }
+        if (!cards.isEmpty() && cards.peek().getRank().getValue() == card.getRank().getValue() - 1){
             if (cards.peek().getSuit().equals(card.getSuit())){
                 return true;
             }
