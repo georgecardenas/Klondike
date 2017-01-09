@@ -2,9 +2,15 @@ package klondike.controllers;
 
 public enum Error {
 	
-	NOT_EMPTY("Esa casilla ya está ocupada"),
-	REPEATED_COORDINATE("No se puede poner de donde se quitó"),
-	NOT_PROPERTY("Esa casilla no está ocupada por ninguna de tus fichas");
+	EMPTY_TABLEAU("La escalera seleccionada está vacía"),
+	EMPTY_FOUNDATION("El palo seleccionado está vacío"),
+	EMPTY_DECK("La baraja está vacía"),
+	EMPTY_WASTE("No hay cartas seleccionables en el descarte"),
+	NOT_EMPTY_DECK("La baraja aún contiene cartas"),
+	NOT_ENOUGH_CARDS("No hay suficientes cartas en la escalera"),
+	CANT_PUSH_ON_FOUNDATION("No es posible instertar la carta en ningún palo"),
+	CANT_PUSH_ON_TABLEAU("No es posible instertar la selección en la escalera seleccionada"),
+	CANT_FLIP("La escalera seleccionada tiene cartas visibles");
 	
 	private String message;
 	

@@ -1,9 +1,11 @@
 package klondike.controllers.local;
 
+import klondike.controllers.Error;
 import klondike.controllers.MenuOptionControllerVisitor;
 import klondike.controllers.MoveWasteToFoundationController;
 import klondike.models.Game;
 import klondike.models.State;
+import klondike.view.console.ErrorView;
 
 public class LocalMoveWasteToFoundationController extends LocalController implements 
 MoveWasteToFoundationController{
@@ -20,7 +22,7 @@ MoveWasteToFoundationController{
     @Override
     public void performAction() {
         if (this.getWaste().isEmpty() || this.getWaste().getPeekSize() == 0){
-            //TODO Exception
+            new ErrorView(Error.EMPTY_WASTE).write();
             return;
         }
         
@@ -34,7 +36,7 @@ MoveWasteToFoundationController{
                 return;
             }
         }
-        //TODO excepcion
+        new ErrorView(Error.CANT_PUSH_ON_FOUNDATION).write();
     }
 
 }

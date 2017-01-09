@@ -4,7 +4,9 @@ import klondike.controllers.MenuOptionControllerVisitor;
 import klondike.controllers.MoveTableauToFoundationController;
 import klondike.models.Game;
 import klondike.models.State;
+import klondike.view.console.ErrorView;
 import klondike.view.console.FromTableauView;
+import klondike.controllers.Error;
 
 public class LocalMoveTableauToFoundationController extends LocalController implements 
 MoveTableauToFoundationController{
@@ -26,8 +28,8 @@ MoveTableauToFoundationController{
         int tableau = fromTableauView.read() - 1;
         
         if(this.getTableaus().get(tableau).getPeekSize() == 0){
+            new ErrorView(Error.EMPTY_TABLEAU).write();
             return;
-            //TODO Exception
         }
         
         for (int i = 0; i < this.getFoundations().size(); i++){
@@ -40,7 +42,7 @@ MoveTableauToFoundationController{
                 return;
             }
         }
-        //TODO Exception
+        new ErrorView(Error.CANT_PUSH_ON_FOUNDATION).write();
     }
 
 }

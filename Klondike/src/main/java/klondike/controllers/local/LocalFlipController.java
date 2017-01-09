@@ -1,8 +1,10 @@
 package klondike.controllers.local;
 
+import klondike.controllers.Error;
 import klondike.controllers.FlipController;
 import klondike.controllers.MenuOptionControllerVisitor;
 import klondike.models.Game;
+import klondike.view.console.ErrorView;
 import klondike.view.console.FromTableauView;
 
 public class LocalFlipController extends LocalController implements 
@@ -25,13 +27,13 @@ FlipController{
         int tableau = toTableauView.read() - 1;
         
         if (this.getTableaus().get(tableau).getPeekSize() > 0){
+            new ErrorView(Error.CANT_FLIP).write();
             return;
-            // TODO Exception
         }
         
         if (this.getTableaus().get(tableau).isEmpty()){
+            new ErrorView(Error.EMPTY_TABLEAU).write();
             return;
-            // TODO Exception
         }
         
         this.getTableaus().get(tableau).setPeekSize(this.getTableaus().get(tableau).getPeekSize() + 1);

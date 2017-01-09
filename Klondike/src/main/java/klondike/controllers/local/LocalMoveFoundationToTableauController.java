@@ -1,8 +1,10 @@
 package klondike.controllers.local;
 
+import klondike.controllers.Error;
 import klondike.controllers.MenuOptionControllerVisitor;
 import klondike.controllers.MoveFoundationToTableauController;
 import klondike.models.Game;
+import klondike.view.console.ErrorView;
 import klondike.view.console.FromFoundationView;
 import klondike.view.console.ToTableauView;
 
@@ -29,15 +31,15 @@ MoveFoundationToTableauController{
         int tableau = toTableauView.read() -1;
         
         if(this.getFoundations().get(foundation).isEmpty()){
+            new ErrorView(Error.EMPTY_FOUNDATION).write();
             return;
-            //TODO Exception
         }
         
         if (this.getTableaus().get(tableau).canPush(this.getFoundations().get(foundation).peek(1).get(0))){
             this.getTableaus().get(tableau).push(this.getTableaus().get(foundation).pop());
             return;
         }else{
-            //TODO Exception
+            new ErrorView(Error.CANT_PUSH_ON_TABLEAU).write();
         }
     }
 
