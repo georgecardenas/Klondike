@@ -38,4 +38,8 @@ public class Game {
     public List<CardStack> getTableaus(){
         return board.getTableaus();
     }
+    
+    public boolean isFinished(){
+        return board.isFinished();
+    }
 }

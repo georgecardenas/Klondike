@@ -3,6 +3,7 @@ package klondike.controllers.local;
 import klondike.controllers.MenuOptionControllerVisitor;
 import klondike.controllers.MoveWasteToFoundationController;
 import klondike.models.Game;
+import klondike.models.State;
 
 public class LocalMoveWasteToFoundationController extends LocalController implements 
 MoveWasteToFoundationController{
@@ -27,10 +28,13 @@ MoveWasteToFoundationController{
             if (this.getFoundations().get(i).canPush(this.getWaste().peek(1).get(0))){
                 this.getFoundations().get(i).push(this.getWaste().pop());
                 this.getWaste().setPeekSize(this.getWaste().getPeekSize() - 1);
+                if (this.isFinished()){
+                    this.setState(State.FINAL);
+                }
                 return;
             }
         }
-//TODO excepcion
+        //TODO excepcion
     }
 
 }

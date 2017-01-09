@@ -12,6 +12,8 @@ public class Board {
     
     private List<CardStack> tableaus;
     
+    public final int FOUDNATION_MAX = 13;
+    
     public Board(int deckToWasteSize){
         deck = new Deck();
         ((Deck)deck).shuffle();
@@ -56,5 +58,14 @@ public class Board {
             }
             tableaus.get(i).setPeekSize(1);
         }
+    }
+
+    public boolean isFinished() {
+        for(int i=0; i< Foundation.MAX_FOUNDATIONS; i++){
+            if (foundations.get(i).size() != FOUDNATION_MAX){
+                return false;
+            }
+        }
+        return true;
     }
 }

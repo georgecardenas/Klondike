@@ -43,4 +43,8 @@ public abstract class LocalController {
     public int getDeckToWasteSize(){
         return game.DECK_TO_WASTE_SIZE;
     }
+    
+    public boolean isFinished(){
+        return game.isFinished();
+    }
 }

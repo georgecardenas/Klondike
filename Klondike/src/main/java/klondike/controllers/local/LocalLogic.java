@@ -2,6 +2,8 @@ package klondike.controllers.local;
 
 import klondike.Logic;
 import klondike.models.Game;
+import klondike.view.console.ExitView;
+import klondike.view.console.VictoryView;
 
 public class LocalLogic implements Logic {
 
@@ -24,8 +26,10 @@ public class LocalLogic implements Logic {
     		case WAITING_ACTION:
                 return menuController;
     		case FINAL:
+    		    new VictoryView().write();
     			return null;
     		case EXIT:
+    		    new ExitView().write();
     		    return null;
     		default:
     			return null;

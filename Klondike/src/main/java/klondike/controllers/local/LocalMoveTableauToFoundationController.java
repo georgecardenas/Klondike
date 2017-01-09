@@ -3,6 +3,7 @@ package klondike.controllers.local;
 import klondike.controllers.MenuOptionControllerVisitor;
 import klondike.controllers.MoveTableauToFoundationController;
 import klondike.models.Game;
+import klondike.models.State;
 import klondike.view.console.FromTableauView;
 
 public class LocalMoveTableauToFoundationController extends LocalController implements 
@@ -33,6 +34,9 @@ MoveTableauToFoundationController{
             if (this.getFoundations().get(i).canPush(this.getTableaus().get(tableau).peek(1).get(0))){
                 this.getFoundations().get(i).push(this.getTableaus().get(tableau).pop());
                 this.getTableaus().get(tableau).setPeekSize(this.getTableaus().get(tableau).getPeekSize() - 1);
+                if (this.isFinished()){
+                    this.setState(State.FINAL);
+                }
                 return;
             }
         }
