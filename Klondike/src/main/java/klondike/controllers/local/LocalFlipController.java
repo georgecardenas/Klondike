@@ -1,12 +1,12 @@
 package klondike.controllers.local;
 
+import klondike.controllers.FlipController;
 import klondike.controllers.MenuOptionControllerVisitor;
-import klondike.controllers.MoveDeckToWasteController;
 import klondike.models.Game;
 import klondike.view.console.FromTableauView;
 
 public class LocalFlipController extends LocalController implements 
-MoveDeckToWasteController{
+FlipController{
     
     FromTableauView toTableauView;
     

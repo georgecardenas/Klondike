@@ -7,5 +7,7 @@ public interface MenuOptionControllerVisitor {
     void visit(MoveWasteToTableauController moveWasteToTableauController);
     void visit(MoveTableauToFoundationController moveTableauToFoundationController);
     void visit(MoveTableauToTableauController moveTableauToTableauController);
+    void visit(MoveFoundationToTableauController moveFoundationToTableauController);
     void visit(FlipController flipController);
+    void visit(ExitController exitController);
 }

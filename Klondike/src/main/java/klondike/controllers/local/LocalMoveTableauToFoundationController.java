@@ -1,12 +1,12 @@
 package klondike.controllers.local;
 
 import klondike.controllers.MenuOptionControllerVisitor;
-import klondike.controllers.MoveWasteToFoundationController;
+import klondike.controllers.MoveTableauToFoundationController;
 import klondike.models.Game;
 import klondike.view.console.FromTableauView;
 
 public class LocalMoveTableauToFoundationController extends LocalController implements 
-MoveWasteToFoundationController{
+MoveTableauToFoundationController{
 
     FromTableauView fromTableauView;
 

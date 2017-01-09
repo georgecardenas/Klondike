@@ -14,7 +14,9 @@ public class LocalMenuController extends LocalOperationController implements
     private LocalMoveWasteToTableauController moveWasteToTableauOptionController;
     private LocalMoveTableauToFoundationController moveTableauToFoundationController;
     private LocalMoveTableauToTableauController moveTableauToTableauController;
+    private LocalMoveFoundationToTableauController moveFoundationToTableauController;
     private LocalFlipController flipController;
+    private LocalExitController exitController;
     
 	LocalMenuController(Game game) {
 		super(game);
@@ -24,7 +26,9 @@ public class LocalMenuController extends LocalOperationController implements
 		moveWasteToTableauOptionController = new LocalMoveWasteToTableauController(game);
 		moveTableauToFoundationController = new LocalMoveTableauToFoundationController(game);
 		moveTableauToTableauController = new LocalMoveTableauToTableauController(game);
+		moveFoundationToTableauController = new LocalMoveFoundationToTableauController(game);
 		flipController = new LocalFlipController(game);
+		exitController = new LocalExitController(game);
 	}
 
 	@Override
@@ -54,8 +58,14 @@ public class LocalMenuController extends LocalOperationController implements
            case 6:
                moveTableauToTableauController.performAction();
            break;
+           case 7:
+               moveFoundationToTableauController.performAction();
+           break;
            case 8:
                flipController.performAction();
+           break;
+           case 9:
+               exitController.performAction();
            break;
        }
     }

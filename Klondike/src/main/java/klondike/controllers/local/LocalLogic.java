@@ -26,6 +26,7 @@ public class LocalLogic implements Logic {
     		case FINAL:
     			return null;
     		case EXIT:
+    		    return null;
     		default:
     			return null;
 		}

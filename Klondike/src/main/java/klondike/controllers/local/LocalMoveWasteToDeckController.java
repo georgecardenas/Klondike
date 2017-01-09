@@ -1,11 +1,11 @@
 package klondike.controllers.local;
 
 import klondike.controllers.MenuOptionControllerVisitor;
-import klondike.controllers.MoveDeckToWasteController;
+import klondike.controllers.MoveWasteToDeckController;
 import klondike.models.Game;
 
 public class LocalMoveWasteToDeckController extends LocalController implements 
-MoveDeckToWasteController{
+MoveWasteToDeckController{
 
     protected LocalMoveWasteToDeckController(Game game) {
         super(game);

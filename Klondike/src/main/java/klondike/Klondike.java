@@ -3,6 +3,7 @@ package klondike;
 import klondike.controllers.OperationController;
 import klondike.controllers.local.LocalLogic;
 import klondike.view.console.ConsoleView;
+import klondike.view.console.ExitView;
 
 public class Klondike {
     private Logic logic;
@@ -22,6 +23,7 @@ public class Klondike {
                 view.interact(controller);
             }
         } while (controller != null);   
+        new ExitView().write();
     }
     
     public static void main(String[] args) {
